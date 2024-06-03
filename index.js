@@ -9,7 +9,12 @@ function onChangePassword() {
 }
 
 function login() {
-    window.location.href = "pages/home/home.html"
+    firebase.auth().signInWithEmailAndPassword("any@email.com", "123456").then(response => {
+        console.log('success', response)
+    }).catch(error => {
+        console.log('error', error)
+    });
+    //window.location.href = "pages/home/home.html"
 }
 
 function register() {
